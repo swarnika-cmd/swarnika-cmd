@@ -1,9 +1,11 @@
 <h1 align="center">Hi 👋, I'm Swarnika Somvanshi</h1>
 <h3 align="center">A passionate web developer from India</h3>
 
-- 🔭 I’m currently working on **TaskFlow - A Smart Task & Project Management Platform**
+- - 🤖 I'm currently learning **Multi-Model Orchestration** — designing systems where multiple AI agents collaborate, delegate, and reason together
 
 - 🌱 I’m currently learning **Spring Framework and Advance Machine Learning**
+  
+- - 🧠 Building **Generative AI projects** involving RAG pipelines, AI agents, and LLM-powered tools
 
 - 📫 How to reach me **somvanshiswarnika@gmail.com**
 
