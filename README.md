@@ -1,13 +1,11 @@
 <h1 align="center">Hi 👋, I'm Swarnika Somvanshi</h1>
-<h3 align="center">A passionate web developer from India</h3>
+<h3 align="center">A passionate Software Engineer & Generative AI Developer from India</h3>
 
-- 🤖 I'm currently learning **Multi-Model Orchestration** — designing systems where multiple AI agents collaborate, delegate, and reason together
-
-- 🌱 I’m currently learning **Spring Framework and Advance Machine Learning**
-  
-- 🧠 Building **Generative AI projects** involving RAG pipelines, AI agents, and LLM-powered tools
-
-- 📫 How to reach me **somvanshiswarnika@gmail.com**
+- 🤖 Currently designing **Multi-Agent Orchestration Systems** — building environments where autonomous AI agents collaborate, delegate, and execute complex reasoning loops.
+- 🧠 Deepening my expertise in **Neural Networks & GenAI** — exploring vector space embeddings, cognitive architectures, and custom deep learning workflows.
+- 🌱 Leveling up on **System Design & Distributed Systems** — focusing on scaling databases, database optimizations (like pgvector indexes), and high-throughput async APIs.
+- ⚡ Passionate about **Privacy-First & Local-First Architectures** — implementing on-device cryptography (AES-GCM/PBKDF2) and client-side vector search pipelines.
+- 📫 Reach me at: **somvanshiswarnika@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
