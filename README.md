@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Swarnika Somvanshi</h1>
-<h3 align="center">A passionate Software Engineer & Generative AI Developer from India</h3>
+<h3 align="center">AI/Infra Engineer — building RAG pipelines, browser automation agents, and distributed memory systems.</h3>
 
 - 🤖 Currently designing **Multi-Agent Orchestration Systems** — building environments where autonomous AI agents collaborate, delegate, and execute complex reasoning loops.
 - 🧠 Deepening my expertise in **Neural Networks & GenAI** — exploring vector space embeddings, cognitive architectures, and custom deep learning workflows.
