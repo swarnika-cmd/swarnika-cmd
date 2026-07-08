@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Swarnika Somvanshi</h1>
 <h3 align="center">AI/Infra Engineer — building RAG pipelines, browser automation agents, and distributed memory systems.</h3>
 
-- 🤖 Currently designing **Multi-Agent Orchestration Systems** — building environments where autonomous AI agents collaborate, delegate, and execute complex reasoning loops.
+- 🤖 Building Mem1: A production-grade, event-driven graph-vector memory engine for autonomous AI agents.
 - 🧠 Deepening my expertise in **Neural Networks & GenAI** — exploring vector space embeddings, cognitive architectures, and custom deep learning workflows.
 - 🌱 Leveling up on **System Design & Distributed Systems** — focusing on scaling databases, database optimizations (like pgvector indexes), and high-throughput async APIs.
 - ⚡ Passionate about **Privacy-First & Local-First Architectures** — implementing on-device cryptography (AES-GCM/PBKDF2) and client-side vector search pipelines.
