@@ -22,7 +22,7 @@
 
 ```yaml
 name: Swarnika Somvanshi
-identity: CS Undergrad @ BITS Pilani (2023 – 2027)
+identity: CS Undergrad @ BITS Pilani (2024 – 2028)
 location: Bengaluru, India
 mantra: "Building intelligent systems that help people make sense of information."
 current_focus:
