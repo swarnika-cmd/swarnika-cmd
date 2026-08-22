@@ -5,7 +5,7 @@
 
 <!-- TYPING SVG BADGE -->
 <a href="https://github.com/swarnika-cmd">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=19&duration=2800&pause=1000&color=A78BFA&center=true&vCenter=true&width=620&lines=AI+Engineer+%26+Systems+Builder;Researcher+in+Residence+%40+SST+Incubation+(Mem1);Open+Source+Contributor+%40+freeCodeCamp;CS+%40+BITS+Pilani+('27)" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=19&duration=2800&pause=1000&color=A78BFA&center=true&vCenter=true&width=620&lines=AI+Engineer+%26+Systems+Builder;Researcher+in+Residence+%40+SST+Incubation+(Mem1);Open+Source+Contributor+%40+freeCodeCamp;CS+%40+BITS+Pilani+('28)" alt="Typing SVG" />
 </a>
 
 <p align="center">
