@@ -150,16 +150,22 @@ current_focus:
 
 ---
 
-### 📊 GitHub Activity & Statistics
+### 📊 GitHub Activity & Real-Time Stats
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=swarnika-cmd&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=E2E8F0&icon_color=38BDF8" height="165" alt="GitHub Stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=swarnika-cmd&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=E2E8F0" height="165" alt="Top Languages" />
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=swarnika-cmd&label=Profile%20Views&color=7C3AED&style=for-the-badge" alt="Profile Views" />
+  &nbsp;
+  <img src="https://img.shields.io/github/followers/swarnika-cmd?label=Followers&style=for-the-badge&logo=github&color=38BDF8&logoColor=white" alt="Followers" />
+  &nbsp;
+  <img src="https://img.shields.io/github/stars/swarnika-cmd?label=Stars&style=for-the-badge&logo=github&color=A78BFA&logoColor=white" alt="Stars" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Status-Building%20%26%20Shipping-10B981?style=for-the-badge&logo=rocket&logoColor=white" alt="Status" />
+</p>
 
-<br/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=swarnika-cmd&theme=tokyonight&hide_border=true&background=0D1117&ring=A78BFA&fire=38BDF8&currStreakLabel=38BDF8" height="165" alt="GitHub Streak" />
+<!-- DYNAMIC CONTRIBUTION GRAPH -->
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=swarnika-cmd&theme=tokyo-night&hide_border=true&area=true" width="100%" alt="Swarnika's Contribution Activity Graph" />
 
 </div>
 
