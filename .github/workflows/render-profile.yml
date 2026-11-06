@@ -1,0 +1,56 @@
+name: Render profile cards
+
+# Rebuilds the SVG cards in assets/ from real sources:
+#   terminal.svg  compiles my HTTP/1.1 server, starts it, and records a real `curl -i`
+#   bench.svg     reads the committed benchmark results from each project repo
+#   oss.svg       lists my merged pull requests from the GitHub search API
+on:
+  schedule:
+    - cron: "30 2 * * 1"   # every Monday, 08:00 IST
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["scripts/**", "data/**", ".github/workflows/render-profile.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Fetch and compile HTTP-1.1-Server
+        run: |
+          git clone --depth 1 https://github.com/swarnika-cmd/HTTP-1.1-Server.git server
+          javac -d server/out server/src/*.java
+
+      - name: Start the server and record a real response
+        run: |
+          java -cp server/out Server --mode=virtual --web-root=data > server.log 2>&1 &
+          for i in $(seq 1 30); do curl -s -o /dev/null http://127.0.0.1:8080/swarnika.txt && break; sleep 1; done
+          curl -si http://127.0.0.1:8080/swarnika.txt > response.txt
+          head -1 response.txt | grep -q "200 OK" || { cat response.txt server.log; exit 1; }
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/render.py --response response.txt --out assets
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || git commit -m "chore: re-render profile cards"
+          git push

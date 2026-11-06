@@ -1,0 +1,1 @@
+{"name":"Swarnika Somvanshi","role":"backend engineer","school":"Scaler School of Technology + BITS Pilani, 2028","builds":["http/1.1 server","search typeahead","llm api gateway"],"tests":202,"merged_prs":8,"now":"java concurrency, caching, postgres"}
