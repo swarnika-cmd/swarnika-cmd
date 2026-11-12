@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>Backend engineer in the making.</b> I build systems from the protocol up, then measure them and fix what breaks.<br/>
-  <sub>Scaler School of Technology · BITS Pilani (CS, 2028) · Bengaluru</sub>
+  <sub>B.Sc. (Hons.) Computer Science, BITS Pilani · 2028</sub>
 </p>
 
 <p align="center">
