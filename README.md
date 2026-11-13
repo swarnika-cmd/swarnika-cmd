@@ -29,9 +29,10 @@
 
 | | Project | The interesting part |
 |:-:|---|---|
-| ⚡ | **[HTTP/1.1 Server](https://github.com/swarnika-cmd/HTTP-1.1-Server)**<br/><sub>Java 21 · raw sockets · 47 tests</sub> | A bounded worker pool with 503 load shedding vs virtual threads: keep-alive connections pin platform threads, so virtual threads cut p99 by 12× |
-| 🔎 | **[Search Typeahead](https://github.com/swarnika-cmd/SearchTypeahead)**<br/><sub>TypeScript · SQLite · 67 tests</sub> | Precomputed top-K at every trie node makes lookups O(prefix length); the cost is memory, measured at 4.4 GB for 1M terms |
-| 🛡️ | **[ShieldWall Gateway](https://github.com/swarnika-cmd/ShieldWall-Gateway)**<br/><sub>FastAPI · Postgres · Redis · 88 tests</sub> | PII masked before it leaves, restored mid-stream across SSE chunks; budgets reserved atomically in a Redis Lua script |
+| ⚡ | **[HTTP/1.1 Server](https://github.com/swarnika-cmd/HTTP-1.1-Server)**<br/><sub>Java 21 · raw sockets · 46 tests</sub> | A bounded worker pool with 503 load shedding vs virtual threads: keep-alive connections pin platform threads, so virtual threads cut p99 by 12× |
+| 🔎 | **[Search Typeahead](https://github.com/swarnika-cmd/SearchTypeahead)**<br/><sub>TypeScript · SQLite · 105 tests</sub> | Precomputed top-K at every trie node makes lookups O(prefix length); the cost was memory, so I compressed single-child paths into a radix trie: heap at 1M terms fell from 4,477 to 529.2 MiB, lookup p99 2.92 µs |
+| 🛡️ | **[ShieldWall Gateway](https://github.com/swarnika-cmd/ShieldWall-Gateway)**<br/><sub>FastAPI · Postgres · Redis · 104 tests</sub> | PII masked before it leaves, restored mid-stream across SSE chunks; budgets reserved atomically in a Redis Lua script. At 400 req/s against a 200 ms mock upstream, 2 workers stayed healthy in 3 of 3 runs and 1 worker in 0 of 3; py-spy profiles of the single worker are committed |
+| 📄 | **[AskMyDoc V2](https://github.com/swarnika-cmd/AskMyDoc-2.O)**<br/><sub>Python · FastAPI · LangChain · ChromaDB</sub> | Document QA over PDF and text files (all-MiniLM-L6-v2; Ollama with a request-time Groq fallback), plus an evaluation harness: a 150-question golden set over 8 public PDFs. Hybrid BM25 + dense retrieval with RRF raised recall@5 from 0.800 to 0.869 over the shipped parent-child design (130 answerable questions, retrieval only) |
 | 🧠 | **[Smarana](https://github.com/swarnika-cmd/Smarana-PrivacyFirstBrain)**<br/><sub>Chrome MV3 · FastAPI · pgvector</sub> | On-device embeddings and AES-256-GCM, with hybrid search fused by Reciprocal Rank Fusion |
 
 <details>
