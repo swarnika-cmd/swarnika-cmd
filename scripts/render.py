@@ -20,6 +20,7 @@ import json
 import os
 import statistics
 import urllib.request
+from decimal import Decimal, ROUND_DOWN
 from datetime import datetime, timezone
 from html import escape
 
@@ -63,8 +64,24 @@ def fmt_int(n):
     return "{:,}".format(int(round(n)))
 
 
+def trunc(n, places):
+    """Truncate (never round up) to a fixed number of decimals, as a string."""
+    q = Decimal(1).scaleb(-places)
+    return "{:.{p}f}".format(Decimal(repr(float(n))).quantize(q, rounding=ROUND_DOWN), p=places)
+
+
 def fmt_k(n):
-    return "{:.0f}K".format(n / 1000) if n >= 10000 else fmt_int(n)
+    """Thousands, truncated: 10956.9 -> 10.9K, 157796 -> 157K; below 10,000 an exact int."""
+    if n >= 100000:
+        return "{}K".format(int(n // 1000))
+    if n >= 10000:
+        return trunc(n / 1000, 1) + "K"
+    return "{:,}".format(int(n))
+
+
+def fmt_ms(n):
+    """Latency with 2 decimals, truncated, as in the source result files."""
+    return trunc(n, 2)
 
 
 # ---------------------------------------------------------------- terminal
@@ -180,9 +197,11 @@ def load_bench():
                 if r["mode"] == mode and r["keepalive"] == "on" and r["connections"] == "100"]
         return statistics.median(vals)
 
-    trie = fetch_json(RAW + "/SearchTypeahead/master/bench/results/trie-bench-full.json")
+    trie = fetch_json(RAW + "/SearchTypeahead/master/bench/results/trie-bench-v3.json")
     load = fetch_json(RAW + "/SearchTypeahead/master/bench/results/load-full.json")
-    big = max(trie["results"], key=lambda r: r["terms"])
+    biggest = max(r["terms"] for r in trie["results"])
+    big = [r for r in trie["results"] if r["impl"] == "radix" and r["terms"] == biggest][0]
+    old = [r for r in trie["results"] if r["impl"] == "array" and r["terms"] == biggest][0]
     sw_rows = []
     for sweep in ("sweep-50-200", "sweep-100-150"):
         data = fetch_json(RAW + "/ShieldWall-Gateway/main/bench/results/{}/k6-summary.json".format(sweep))
@@ -193,7 +212,7 @@ def load_bench():
             "platform_rps": med("platform", "req_per_sec"), "platform_p99": med("platform", "p99_ms"),
             "virtual_rps": med("virtual", "req_per_sec"), "virtual_p99": med("virtual", "p99_ms"),
         },
-        "trie": {"terms": big["terms"], "p99_us": big["latencyUs"]["p99"], "heap_mb": big["heapMB"],
+        "trie": {"terms": big["terms"], "p99_us": big["latencyUs"]["p99"], "heap_mb": big["heapMB"], "old_heap_mb": old["heapMB"],
                  "rps": load["requestsPerSec"], "api_p99": load["latencyMs"]["p99"]},
         "gateway": [(r["rate_rps"], r["overhead_p50_ms"], r["overhead_p99_ms"]) for r in sw_rows],
     }
@@ -238,18 +257,18 @@ def render_bench(b):
     out.append('<text x="{}" y="{}" fill="{}" class="big">{}</text>'.format(xs[0] + 18, top + 88, TEAL, fmt_k(h["platform_rps"]) + " req/s"))
     out.append('<text x="{}" y="{}" fill="{}" class="s">peak, 64-thread pool</text>'.format(xs[0] + 18, top + 106, DIM))
     mx = max(h["platform_p99"], h["virtual_p99"])
-    out += bar(xs[0] + 18, top + 136, 150, h["platform_p99"], mx, ORANGE, "p99 · platform pool", "{:.1f} ms".format(h["platform_p99"]), 0.3)
-    out += bar(xs[0] + 18, top + 176, 150, h["virtual_p99"], mx, GREEN, "p99 · virtual threads", "{:.1f} ms".format(h["virtual_p99"]), 0.5)
+    out += bar(xs[0] + 18, top + 136, 150, h["platform_p99"], mx, ORANGE, "p99 · platform pool", fmt_ms(h["platform_p99"]) + " ms", 0.3)
+    out += bar(xs[0] + 18, top + 176, 150, h["virtual_p99"], mx, GREEN, "p99 · virtual threads", fmt_ms(h["virtual_p99"]) + " ms", 0.5)
 
     # Typeahead
     t = b["trie"]
-    out += card(xs[1], top, cw, ch, "Search Typeahead", "TypeScript · trie + top-K",
-                "trie-bench + load-full.json")
-    out.append('<text x="{}" y="{}" fill="{}" class="big">{} µs</text>'.format(xs[1] + 18, top + 88, TEAL, ("%g" % round(t["p99_us"], 1))))
+    out += card(xs[1], top, cw, ch, "Search Typeahead", "TypeScript · radix trie + top-K",
+                "trie-bench-v3 + load-full.json")
+    out.append('<text x="{}" y="{}" fill="{}" class="big">{} µs</text>'.format(xs[1] + 18, top + 88, TEAL, fmt_ms(t["p99_us"])))
     out.append('<text x="{}" y="{}" fill="{}" class="s">p99 lookup · {}M terms</text>'.format(xs[1] + 18, top + 106, DIM, t["terms"] // 1000000))
     out.append('<text x="{}" y="{}" fill="{}" class="big">{} req/s</text>'.format(xs[1] + 18, top + 152, BLUE, fmt_k(t["rps"])))
-    out.append('<text x="{}" y="{}" fill="{}" class="s">API under k6 · p99 {:.1f} ms</text>'.format(xs[1] + 18, top + 170, DIM, t["api_p99"]))
-    out.append('<text x="{}" y="{}" fill="{}" class="s">cost: {:.1f} GB heap at 1M</text>'.format(xs[1] + 18, top + 192, ORANGE, t["heap_mb"] / 1000))
+    out.append('<text x="{}" y="{}" fill="{}" class="s">k6, array trie · p99 {:.1f} ms</text>'.format(xs[1] + 18, top + 170, DIM, t["api_p99"]))
+    out.append('<text x="{}" y="{}" fill="{}" class="s">heap at 1M: {:g} MiB (was {:,g})</text>'.format(xs[1] + 18, top + 192, ORANGE, t["heap_mb"], t["old_heap_mb"]))
 
     # Gateway: overhead p99 per request rate
     g = b["gateway"]
