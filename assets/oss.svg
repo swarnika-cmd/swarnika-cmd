@@ -7,49 +7,49 @@
 <circle cx="30" cy="86" r="5" fill="#8957e5"/>
 <path d="M30 92 V110" stroke="#30363d" stroke-width="2"/>
 <text x="48" y="91" fill="#ffa657" class="r">2026-09-24</text>
-<text x="140" y="91" class="r"><tspan fill="#7d8590">freeCodeCamp-Summer-Cohort-2026/</tspan><tspan fill="#79c0ff">word-wizards</tspan><tspan fill="#7ee787" class="n"> #55</tspan></text>
+<text x="140" y="91" class="r"><tspan fill="#7d8590">spellware/</tspan><tspan fill="#79c0ff">fcc-summer-cohort-26-word-wizards</tspan><tspan fill="#7ee787" class="n"> #55</tspan></text>
 <text x="545" y="91" fill="#e6edf3" class="r">feat(learner): implement achievements …</text>
 </g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.28s" dur="0.3s" fill="freeze"/>
 <circle cx="30" cy="116" r="5" fill="#8957e5"/>
 <path d="M30 122 V140" stroke="#30363d" stroke-width="2"/>
 <text x="48" y="121" fill="#ffa657" class="r">2026-09-24</text>
-<text x="140" y="121" class="r"><tspan fill="#7d8590">freeCodeCamp-Summer-Cohort-2026/</tspan><tspan fill="#79c0ff">word-wizards</tspan><tspan fill="#7ee787" class="n"> #47</tspan></text>
+<text x="140" y="121" class="r"><tspan fill="#7d8590">spellware/</tspan><tspan fill="#79c0ff">fcc-summer-cohort-26-word-wizards</tspan><tspan fill="#7ee787" class="n"> #47</tspan></text>
 <text x="545" y="121" fill="#e6edf3" class="r">feat(progress): implement learner prog…</text>
 </g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.36s" dur="0.3s" fill="freeze"/>
 <circle cx="30" cy="146" r="5" fill="#8957e5"/>
 <path d="M30 152 V170" stroke="#30363d" stroke-width="2"/>
 <text x="48" y="151" fill="#ffa657" class="r">2026-08-17</text>
-<text x="140" y="151" class="r"><tspan fill="#7d8590">freeCodeCamp-Summer-Cohort-2026/</tspan><tspan fill="#79c0ff">bookmarked</tspan><tspan fill="#7ee787" class="n"> #83</tspan></text>
+<text x="140" y="151" class="r"><tspan fill="#7d8590">spellware/</tspan><tspan fill="#79c0ff">fcc-summer-cohort-26-bookmarked</tspan><tspan fill="#7ee787" class="n"> #83</tspan></text>
 <text x="545" y="151" fill="#e6edf3" class="r">added show/hide password toggle to Aut…</text>
 </g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.44s" dur="0.3s" fill="freeze"/>
 <circle cx="30" cy="176" r="5" fill="#8957e5"/>
 <path d="M30 182 V200" stroke="#30363d" stroke-width="2"/>
 <text x="48" y="181" fill="#ffa657" class="r">2026-08-14</text>
-<text x="140" y="181" class="r"><tspan fill="#7d8590">freeCodeCamp-Summer-Cohort-2026/</tspan><tspan fill="#79c0ff">bookmarked</tspan><tspan fill="#7ee787" class="n"> #55</tspan></text>
+<text x="140" y="181" class="r"><tspan fill="#7d8590">spellware/</tspan><tspan fill="#79c0ff">fcc-summer-cohort-26-bookmarked</tspan><tspan fill="#7ee787" class="n"> #55</tspan></text>
 <text x="545" y="181" fill="#e6edf3" class="r">Add PATCH /api/resources/:id so author…</text>
 </g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.52s" dur="0.3s" fill="freeze"/>
 <circle cx="30" cy="206" r="5" fill="#8957e5"/>
 <path d="M30 212 V230" stroke="#30363d" stroke-width="2"/>
 <text x="48" y="211" fill="#ffa657" class="r">2026-08-12</text>
-<text x="140" y="211" class="r"><tspan fill="#7d8590">freeCodeCamp-Summer-Cohort-2026/</tspan><tspan fill="#79c0ff">datalens</tspan><tspan fill="#7ee787" class="n"> #25</tspan></text>
+<text x="140" y="211" class="r"><tspan fill="#7d8590">spellware/</tspan><tspan fill="#79c0ff">fcc-summer-cohort-26-datalens</tspan><tspan fill="#7ee787" class="n"> #25</tspan></text>
 <text x="545" y="211" fill="#e6edf3" class="r">Fix handle_missing_values fill strateg…</text>
 </g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.60s" dur="0.3s" fill="freeze"/>
 <circle cx="30" cy="236" r="5" fill="#8957e5"/>
 <path d="M30 242 V260" stroke="#30363d" stroke-width="2"/>
 <text x="48" y="241" fill="#ffa657" class="r">2026-08-11</text>
-<text x="140" y="241" class="r"><tspan fill="#7d8590">freeCodeCamp-Summer-Cohort-2026/</tspan><tspan fill="#79c0ff">catalog-service</tspan><tspan fill="#7ee787" class="n"> #18</tspan></text>
+<text x="140" y="241" class="r"><tspan fill="#7d8590">spellware/</tspan><tspan fill="#79c0ff">fcc-summer-cohort-26-catalog-service</tspan><tspan fill="#7ee787" class="n"> #18</tspan></text>
 <text x="545" y="241" fill="#e6edf3" class="r">Swarnika cmd/Add missing Javadoc for t…</text>
 </g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.68s" dur="0.3s" fill="freeze"/>
 <circle cx="30" cy="266" r="5" fill="#8957e5"/>
 <path d="M30 272 V290" stroke="#30363d" stroke-width="2"/>
 <text x="48" y="271" fill="#ffa657" class="r">2026-08-11</text>
-<text x="140" y="271" class="r"><tspan fill="#7d8590">freeCodeCamp-Summer-Cohort-2026/</tspan><tspan fill="#79c0ff">shiftlog</tspan><tspan fill="#7ee787" class="n"> #19</tspan></text>
+<text x="140" y="271" class="r"><tspan fill="#7d8590">spellware/</tspan><tspan fill="#79c0ff">fcc-summer-cohort-26-shiftlog</tspan><tspan fill="#7ee787" class="n"> #19</tspan></text>
 <text x="545" y="271" fill="#e6edf3" class="r">document conflict-detection algorithm …</text>
 </g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.76s" dur="0.3s" fill="freeze"/>
