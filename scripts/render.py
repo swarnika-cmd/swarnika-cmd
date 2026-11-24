@@ -111,7 +111,7 @@ def json_spans(text):
 
 def terminal_lines(response, command):
     head, _, body = response.replace("\r\n", "\n").partition("\n\n")
-    lines = [[("swarnika@bengaluru", GREEN), (":", TEXT), ("~", BLUE), ("$ ", TEXT), (command, TEXT)]]
+    lines = [[("swarnika@dev", GREEN), (":", TEXT), ("~", BLUE), ("$ ", TEXT), (command, TEXT)]]
     for n, line in enumerate(head.split("\n")):
         if n == 0:
             lines.append([(line, GREEN if " 2" in line[:13] else RED)])
@@ -128,7 +128,7 @@ def terminal_lines(response, command):
         pretty = body
     for line in pretty.split("\n"):
         lines.append(json_spans(line))
-    lines.append([("swarnika@bengaluru", GREEN), (":", TEXT), ("~", BLUE), ("$ ", TEXT)])
+    lines.append([("swarnika@dev", GREEN), (":", TEXT), ("~", BLUE), ("$ ", TEXT)])
     return lines
 
 
